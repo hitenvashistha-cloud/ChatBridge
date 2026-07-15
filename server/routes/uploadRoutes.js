@@ -43,7 +43,7 @@ router.post('/', protect, upload.single('file'), async (req, res) => {
       return res.status(400).json({ message: 'No file uploaded' });
     }
     
-    const fileUrl = `http://localhost:5001/uploads/${req.file.filename}`;
+    const fileUrl = `https://chatbridge-api-88rl.onrender.com/uploads/${req.file.filename}`;
     
     res.json({
       message: 'File uploaded successfully',
