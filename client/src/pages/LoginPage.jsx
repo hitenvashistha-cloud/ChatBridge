@@ -14,7 +14,7 @@ const LoginPage = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', {
+      const response = await axios.post('https://chatbridge-api-88rl.onrender.com/api/auth/login', {
         email,
         password
       });

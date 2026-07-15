@@ -15,7 +15,7 @@ const RegisterPage = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/register', {
+      const response = await axios.post('https://chatbridge-api-88rl.onrender.com/api/auth/register', {
         username,
         email,
         password

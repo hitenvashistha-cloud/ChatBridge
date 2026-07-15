@@ -23,7 +23,7 @@ export const SocketProvider = ({ children }) => {
       return;
     }
 
-    const socketInstance = io('http://localhost:5001', {
+    const socketInstance = io('https://chatbridge-api-88rl.onrender.com', {
       auth: {
         token: token
       },

@@ -53,7 +53,7 @@ const ChatPage = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/profile/me', {
+        const response = await axios.get('https://chatbridge-api-88rl.onrender.com/api/profile/me', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -70,7 +70,7 @@ const ChatPage = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/users', {
+        const response = await axios.get('https://chatbridge-api-88rl.onrender.com/api/users', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -88,7 +88,7 @@ const ChatPage = () => {
       const fetchMessages = async () => {
         setLoading(true);
         try {
-          const response = await axios.get(`http://localhost:5001/api/messages/${selectedUser._id}`, {
+          const response = await axios.get(`https://chatbridge-api-88rl.onrender.com/api/messages/${selectedUser._id}`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
@@ -160,7 +160,7 @@ const ChatPage = () => {
     setTranslating(true);
     try {
       const response = await axios.post(
-        'http://localhost:5001/api/translate',
+        'https://chatbridge-api-88rl.onrender.com/api/translate',
         {
           text: text,
           targetLanguage: targetLang
@@ -202,7 +202,7 @@ const ChatPage = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:5001/api/upload', formData, {
+      const response = await axios.post('https://chatbridge-api-88rl.onrender.com/api/upload', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -262,7 +262,7 @@ const ChatPage = () => {
     formData.append('profilePic', file);
 
     try {
-      const response = await axios.post('http://localhost:5001/api/profile/upload', formData, {
+      const response = await axios.post('https://chatbridge-api-88rl.onrender.com/api/upload', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -272,7 +272,7 @@ const ChatPage = () => {
       setCurrentUser(prev => ({ ...prev, profilePic: response.data.profilePic }));
       localStorage.setItem('user', JSON.stringify({ ...currentUser, profilePic: response.data.profilePic }));
       
-      const usersResponse = await axios.get('http://localhost:5001/api/users', {
+      const usersResponse = await axios.get('https://chatbridge-api-88rl.onrender.com/api/users', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -305,7 +305,7 @@ const ChatPage = () => {
 
   const getUserAvatar = (userData) => {
     if (userData?.profilePic) {
-      return `http://localhost:5001${userData.profilePic}`;
+      return `https://chatbridge-api-88rl.onrender.com${userData.profilePic}`;
     }
     return null;
   };
@@ -326,7 +326,7 @@ const ChatPage = () => {
             />
             {currentUser?.profilePic ? (
               <img
-                src={`http://localhost:5001${currentUser.profilePic}`}
+                src={`https://chatbridge-api-88rl.onrender.com${currentUser.profilePic}`}
                 alt="Profile"
                 className="w-10 h-10 rounded-full object-cover border-2 border-white/30"
               />
@@ -376,7 +376,7 @@ const ChatPage = () => {
           <div className="p-3 border-b border-gray-200 dark:border-dark-border flex items-center gap-3">
             {currentUser?.profilePic ? (
               <img
-                src={`http://localhost:5001${currentUser.profilePic}`}
+                src={`https://chatbridge-api-88rl.onrender.com${currentUser.profilePic}`}
                 alt="Profile"
                 className="w-10 h-10 rounded-full object-cover"
               />
@@ -425,7 +425,7 @@ const ChatPage = () => {
                     <div className="relative">
                       {u.profilePic ? (
                         <img
-                          src={`http://localhost:5001${u.profilePic}`}
+                          src={`https://chatbridge-api-88rl.onrender.com${u.profilePic}`}
                           alt={u.username}
                           className="w-10 h-10 rounded-full object-cover"
                         />
@@ -467,7 +467,7 @@ const ChatPage = () => {
               <div className="bg-white dark:bg-dark-surface p-3 border-b border-gray-200 dark:border-dark-border flex items-center gap-3 shadow-sm transition-colors duration-300">
                 {selectedUser.profilePic ? (
                   <img
-                    src={`http://localhost:5001${selectedUser.profilePic}`}
+                    src={`https://chatbridge-api-88rl.onrender.com${selectedUser.profilePic}`}
                     alt={selectedUser.username}
                     className="w-12 h-12 rounded-full object-cover"
                   />
