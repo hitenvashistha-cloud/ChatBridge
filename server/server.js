@@ -13,7 +13,11 @@ const profileRoutes = require('./routes/profileRoutes');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://monumental-heliotrope-2ea476.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 const authRoutes = require('./routes/authRoutes');
@@ -33,8 +37,9 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"]
+    origin: "https://monumental-heliotrope-2ea476.netlify.app",
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
