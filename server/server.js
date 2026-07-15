@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "https://monumental-heliotrope-2ea476.netlify.app",
+  origin: "https://chatbridgee.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -37,7 +37,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: "https://monumental-heliotrope-2ea476.netlify.app",
+    origin: "https://chatbridgee.netlify.app",
     methods: ["GET", "POST"],
     credentials: true
   }
