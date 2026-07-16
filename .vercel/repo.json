@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_Ri1z2gLW7VMH6zcojgrZzcfhBmBj",
+      "name": "chat-bridge",
+      "directory": "client",
+      "orgId": "team_HPYMNZmccdhJo8DbnhbgqB3w"
+    }
+  ]
+}
