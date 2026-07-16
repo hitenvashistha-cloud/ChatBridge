@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "https://chatbridgee.netlify.app",
+  origin: "https://chat-bridge-a9ml37eo8-binary-coderz.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -37,7 +37,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: "https://chatbridgee.netlify.app",
+    origin: "https://chat-bridge-a9ml37eo8-binary-coderz.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
   }
